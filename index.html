@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Avedanske Services Pvt Ltd | IT Services, DevOps & SRE Monitoring</title>
+<meta name="description" content="Avedanske Services Pvt Ltd — IT services, DevOps, SRE and monitoring solutions to keep your infrastructure reliable, secure, and scalable.">
+<style>
+  :root{
+    --bg:#0a0e14;
+    --bg-alt:#0f1420;
+    --card:#111827;
+    --border:#1f2937;
+    --text:#e5e7eb;
+    --muted:#9ca3af;
+    --accent:#22d3ee;
+    --accent2:#34d399;
+    --mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.6;
+    scroll-behavior:smooth;
+  }
+  a{color:inherit;text-decoration:none;}
+  .container{max-width:1120px;margin:0 auto;padding:0 24px;}
+
+  /* Nav */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(10,14,20,0.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
+  }
+  nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0;}
+  .logo{font-weight:700;font-size:1.15rem;letter-spacing:0.3px;}
+  .logo span{color:var(--accent);font-family:var(--mono);}
+  .nav-links{display:flex;gap:32px;font-size:0.95rem;color:var(--muted);}
+  .nav-links a:hover{color:var(--text);}
+  .nav-cta{
+    background:var(--accent);
+    color:#04141a;
+    padding:9px 18px;
+    border-radius:6px;
+    font-weight:600;
+    font-size:0.9rem;
+  }
+  .menu-toggle{display:none;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer;}
+
+  /* Hero */
+  .hero{
+    padding:110px 0 90px;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(34,211,238,0.08), transparent 40%),
+      radial-gradient(circle at 85% 60%, rgba(52,211,153,0.07), transparent 40%);
+    border-bottom:1px solid var(--border);
+  }
+  .eyebrow{
+    display:inline-block;
+    font-family:var(--mono);
+    font-size:0.8rem;
+    color:var(--accent2);
+    background:rgba(52,211,153,0.08);
+    border:1px solid rgba(52,211,153,0.25);
+    padding:6px 14px;
+    border-radius:20px;
+    margin-bottom:22px;
+  }
+  .hero h1{
+    font-size:clamp(2.1rem,5vw,3.4rem);
+    font-weight:800;
+    line-height:1.15;
+    max-width:820px;
+    margin-bottom:22px;
+  }
+  .hero h1 .grad{
+    background:linear-gradient(90deg,var(--accent),var(--accent2));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+  .hero p{
+    color:var(--muted);
+    font-size:1.1rem;
+    max-width:640px;
+    margin-bottom:34px;
+  }
+  .btn-row{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn{
+    display:inline-block;
+    padding:13px 26px;
+    border-radius:6px;
+    font-weight:600;
+    font-size:0.95rem;
+    transition:transform 0.15s ease, opacity 0.15s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--accent);color:#04141a;}
+  .btn-secondary{background:transparent;color:var(--text);border:1px solid var(--border);}
+  .btn-secondary:hover{border-color:var(--accent);}
+
+  .stats{display:flex;gap:48px;margin-top:64px;flex-wrap:wrap;}
+  .stat h3{font-size:1.9rem;font-family:var(--mono);color:var(--accent);}
+  .stat p{color:var(--muted);font-size:0.85rem;margin:0;}
+
+  /* Section base */
+  section{padding:90px 0;border-bottom:1px solid var(--border);}
+  .section-head{max-width:640px;margin-bottom:52px;}
+  .section-tag{font-family:var(--mono);font-size:0.8rem;color:var(--accent);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;display:block;}
+  .section-head h2{font-size:clamp(1.7rem,3.5vw,2.3rem);font-weight:800;margin-bottom:14px;}
+  .section-head p{color:var(--muted);font-size:1.02rem;}
+
+  /* Services */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:30px;
+    transition:border-color 0.2s ease, transform 0.2s ease;
+  }
+  .card:hover{border-color:var(--accent);transform:translateY(-4px);}
+  .card .icon{
+    width:44px;height:44px;
+    border-radius:8px;
+    background:rgba(34,211,238,0.1);
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:18px;
+    font-size:1.3rem;
+  }
+  .card h3{font-size:1.1rem;margin-bottom:10px;}
+  .card p{color:var(--muted);font-size:0.93rem;}
+
+  /* About */
+  .about-wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+  .about-list{list-style:none;margin-top:22px;}
+  .about-list li{
+    padding:12px 0;
+    border-top:1px solid var(--border);
+    color:var(--muted);
+    display:flex;
+    gap:10px;
+  }
+  .about-list li:first-child{border-top:none;}
+  .about-list li::before{content:"→";color:var(--accent);font-family:var(--mono);flex-shrink:0;}
+  .about-panel{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:32px;
+    font-family:var(--mono);
+    font-size:0.85rem;
+    color:var(--accent2);
+  }
+  .about-panel .line{color:var(--muted);}
+  .about-panel .key{color:var(--accent);}
+
+  /* Why us */
+  .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  .why-item{text-align:left;}
+  .why-item .num{font-family:var(--mono);color:var(--accent);font-size:0.85rem;margin-bottom:8px;}
+  .why-item h4{font-size:1.02rem;margin-bottom:8px;}
+  .why-item p{color:var(--muted);font-size:0.9rem;}
+
+  /* Contact */
+  .contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;}
+  .info-item{margin-bottom:22px;}
+  .info-item .label{font-family:var(--mono);font-size:0.78rem;color:var(--accent);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px;}
+  .info-item .value{color:var(--text);font-size:1rem;}
+  form{display:flex;flex-direction:column;gap:16px;}
+  input,textarea{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:13px 16px;
+    color:var(--text);
+    font-family:inherit;
+    font-size:0.95rem;
+  }
+  input:focus,textarea:focus{outline:none;border-color:var(--accent);}
+  textarea{resize:vertical;min-height:120px;}
+
+  footer{padding:36px 0;text-align:center;color:var(--muted);font-size:0.85rem;}
+  footer .logo{justify-content:center;margin-bottom:10px;display:flex;}
+
+  @media (max-width:860px){
+    .nav-links{display:none;}
+    .grid{grid-template-columns:1fr 1fr;}
+    .about-wrap,.contact-wrap{grid-template-columns:1fr;}
+    .why-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:560px){
+    .grid{grid-template-columns:1fr;}
+    .why-grid{grid-template-columns:1fr;}
+    .stats{gap:28px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <div class="logo">AVEDANSKE<span>.svc</span></div>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#why">Why Us</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a href="#contact" class="nav-cta">Get in Touch</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <span class="eyebrow">● Systems Online</span>
+    <h1>Reliable infrastructure, <span class="grad">managed by experts.</span></h1>
+    <p>Avedanske Services Pvt Ltd delivers IT services, DevOps engineering, and Site Reliability & Monitoring solutions that keep your systems fast, secure, and always available.</p>
+    <div class="btn-row">
+      <a href="#contact" class="btn btn-primary">Start a Project</a>
+      <a href="#services" class="btn btn-secondary">Explore Services</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><h3>24/7</h3><p>Monitoring &amp; On-Call Support</p></div>
+      <div class="stat"><h3>99.9%</h3><p>Uptime Target for Clients</p></div>
+      <div class="stat"><h3>&lt;15min</h3><p>Avg. Incident Response</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">What We Do</span>
+      <h2>End-to-end IT & infrastructure services</h2>
+      <p>From cloud infrastructure to production monitoring, we help teams ship faster and sleep better.</p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <div class="icon">☁️</div>
+        <h3>IT Infrastructure Services</h3>
+        <p>Design, deployment, and management of cloud and on-prem infrastructure tailored to your business needs.</p>
+      </div>
+      <div class="card">
+        <div class="icon">⚙️</div>
+        <h3>DevOps Engineering</h3>
+        <p>CI/CD pipelines, infrastructure as code, containerization, and automation that accelerates your release cycle.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🛡️</div>
+        <h3>Site Reliability Engineering</h3>
+        <p>SLOs, error budgets, capacity planning, and reliability practices that keep critical systems running.</p>
+      </div>
+      <div class="card">
+        <div class="icon">📊</div>
+        <h3>Monitoring & Observability</h3>
+        <p>End-to-end monitoring, logging, alerting, and dashboards for full visibility into your systems.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🚨</div>
+        <h3>Incident Management & On-Call</h3>
+        <p>24/7 on-call coverage, incident response, and postmortems to minimize downtime and its impact.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🔐</div>
+        <h3>Cloud Security & Compliance</h3>
+        <p>Security hardening, access controls, and compliance support across your cloud environments.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="about-wrap">
+      <div>
+        <span class="section-tag">About Avedanske</span>
+        <h2 style="font-size:2rem;font-weight:800;margin-bottom:14px;">Your extended IT & DevOps team</h2>
+        <p style="color:var(--muted);">Avedanske Services Pvt Ltd is a technology services company focused on helping businesses build, run, and scale reliable infrastructure. We partner with startups and enterprises alike to bridge the gap between development and operations.</p>
+        <ul class="about-list">
+          <li>Experienced DevOps & SRE engineers</li>
+          <li>Cloud-agnostic: AWS, Azure, GCP</li>
+          <li>Proactive monitoring, not just reactive fixes</li>
+          <li>Transparent reporting and SLAs</li>
+        </ul>
+      </div>
+      <div class="about-panel">
+        <div class="line">$ avedanske --status</div><br>
+        <div><span class="key">company</span>: Avedanske Services Pvt Ltd</div>
+        <div><span class="key">focus</span>: IT Services · DevOps · SRE</div>
+        <div><span class="key">monitoring</span>: enabled</div>
+        <div><span class="key">alerting</span>: on-call rotation active</div>
+        <div><span class="key">uptime_target</span>: 99.9%</div>
+        <div><span class="key">status</span>: ✔ all systems operational</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">Why Avedanske</span>
+      <h2>Built for reliability, not just uptime</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="num">01</div>
+        <h4>Proactive Monitoring</h4>
+        <p>We catch issues before they become incidents.</p>
+      </div>
+      <div class="why-item">
+        <div class="num">02</div>
+        <h4>Automation First</h4>
+        <p>Less manual toil, more consistent, repeatable systems.</p>
+      </div>
+      <div class="why-item">
+        <div class="num">03</div>
+        <h4>Clear Communication</h4>
+        <p>Regular reporting and no surprises during incidents.</p>
+      </div>
+      <div class="why-item">
+        <div class="num">04</div>
+        <h4>Flexible Engagement</h4>
+        <p>Project-based, retainer, or fully managed support models.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="border-bottom:none;">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">Get In Touch</span>
+      <h2>Let's talk about your infrastructure</h2>
+      <p>Tell us about your project or challenges — we'll get back to you within one business day.</p>
+    </div>
+    <div class="contact-wrap">
+      <div>
+        <div class="info-item">
+          <div class="label">Company</div>
+          <div class="value">Avedanske Services Pvt Ltd</div>
+        </div>
+        <div class="info-item">
+          <div class="label">Email</div>
+          <div class="value">bhavesh.p@avedanske.in</div>
+        </div>
+        <div class="info-item">
+          <div class="label">Phone</div>
+          <div class="value">+91 95103 51269</div>
+        </div>
+        <div class="info-item">
+          <div class="label">Location</div>
+          <div class="value">India</div>
+        </div>
+      </div>
+      <form onsubmit="event.preventDefault(); alert('Thanks! This form is a placeholder — connect it to an email service or backend to receive submissions.');">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <input type="text" placeholder="Company (optional)">
+        <textarea placeholder="Tell us about your project..." required></textarea>
+        <button type="submit" class="btn btn-primary" style="border:none;cursor:pointer;">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="logo">AVEDANSKE<span>.svc</span></div>
+    <p>&copy; 2026 Avedanske Services Pvt Ltd. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
