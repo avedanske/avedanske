@@ -340,7 +340,7 @@
       <h2>Let's talk about your infrastructure</h2>
       <p>Tell us about your project or challenges — we'll get back to you within one business day.</p>
     </div>
-    <div class="contact-wrap">
+    <div class="contact-wrap" style="grid-template-columns:1fr;">
       <div>
         <div class="info-item">
           <div class="label">Company</div>
@@ -358,37 +358,8 @@
           <div class="label">Location</div>
           <div class="value">India</div>
         </div>
+        <a href="mailto:bhavesh.p@avedanske.in?subject=Request%20for%20IT%2FDevOps%20Services" class="btn btn-primary" style="margin-top:12px;">Get in Touch via Email</a>
       </div>
-      <form id="contact-form" onsubmit="return sendContactEmail(event);">
-        <input type="text" id="cf-name" placeholder="Your Name" required>
-        <input type="email" id="cf-email" placeholder="Your Email" required>
-        <input type="text" id="cf-company" placeholder="Company (optional)">
-        <textarea id="cf-message" placeholder="Tell us about your project..." required></textarea>
-        <button type="submit" class="btn btn-primary" style="border:none;cursor:pointer;">Send Message</button>
-      </form>
-      <script>
-        function sendContactEmail(e){
-          e.preventDefault();
-          var name = document.getElementById('cf-name').value;
-          var email = document.getElementById('cf-email').value;
-          var company = document.getElementById('cf-company').value;
-          var message = document.getElementById('cf-message').value;
-
-          var subject = 'New inquiry from ' + name + (company ? ' (' + company + ')' : '');
-          var body =
-            'Name: ' + name + '\n' +
-            'Email: ' + email + '\n' +
-            (company ? 'Company: ' + company + '\n' : '') +
-            '\nMessage:\n' + message;
-
-          var mailto = 'mailto:bhavesh.p@avedanske.in'
-            + '?subject=' + encodeURIComponent(subject)
-            + '&body=' + encodeURIComponent(body);
-
-          window.location.href = mailto;
-          return false;
-        }
-      </script>
     </div>
   </div>
 </section>
