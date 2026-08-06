@@ -359,13 +359,36 @@
           <div class="value">India</div>
         </div>
       </div>
-      <form onsubmit="event.preventDefault(); alert('Thanks! This form is a placeholder — connect it to an email service or backend to receive submissions.');">
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <input type="text" placeholder="Company (optional)">
-        <textarea placeholder="Tell us about your project..." required></textarea>
+      <form id="contact-form" onsubmit="return sendContactEmail(event);">
+        <input type="text" id="cf-name" placeholder="Your Name" required>
+        <input type="email" id="cf-email" placeholder="Your Email" required>
+        <input type="text" id="cf-company" placeholder="Company (optional)">
+        <textarea id="cf-message" placeholder="Tell us about your project..." required></textarea>
         <button type="submit" class="btn btn-primary" style="border:none;cursor:pointer;">Send Message</button>
       </form>
+      <script>
+        function sendContactEmail(e){
+          e.preventDefault();
+          var name = document.getElementById('cf-name').value;
+          var email = document.getElementById('cf-email').value;
+          var company = document.getElementById('cf-company').value;
+          var message = document.getElementById('cf-message').value;
+
+          var subject = 'New inquiry from ' + name + (company ? ' (' + company + ')' : '');
+          var body =
+            'Name: ' + name + '\n' +
+            'Email: ' + email + '\n' +
+            (company ? 'Company: ' + company + '\n' : '') +
+            '\nMessage:\n' + message;
+
+          var mailto = 'mailto:bhavesh.p@avedanske.in'
+            + '?subject=' + encodeURIComponent(subject)
+            + '&body=' + encodeURIComponent(body);
+
+          window.location.href = mailto;
+          return false;
+        }
+      </script>
     </div>
   </div>
 </section>
