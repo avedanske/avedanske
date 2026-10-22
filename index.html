@@ -5,6 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Avedanske Services Pvt Ltd | IT Services, DevOps & SRE Monitoring</title>
 <meta name="description" content="Avedanske Services Pvt Ltd — IT services, DevOps, SRE and monitoring solutions to keep your infrastructure reliable, secure, and scalable.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@800&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#0a0e14;
@@ -36,8 +41,11 @@
     border-bottom:1px solid var(--border);
   }
   nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0;}
-  .logo{font-weight:700;font-size:1.15rem;letter-spacing:0.3px;}
-  .logo span{color:var(--accent);font-family:var(--mono);}
+  .logo{display:flex;align-items:center;gap:10px;font-family:'Sora',sans-serif;font-weight:800;font-size:1.3rem;letter-spacing:-0.02em;}
+  .logo svg{width:32px;height:32px;flex-shrink:0;}
+  .logo .halo{transform-origin:60px 76px;animation:beacon 2.4s ease-in-out infinite;}
+  @keyframes beacon{0%,100%{opacity:0.22;transform:scale(1);}50%{opacity:0.08;transform:scale(1.35);}}
+  @media (prefers-reduced-motion:reduce){.logo .halo{animation:none;}}
   .nav-links{display:flex;gap:32px;font-size:0.95rem;color:var(--muted);}
   .nav-links a:hover{color:var(--text);}
   .nav-cta{
@@ -204,7 +212,14 @@
 <header>
   <div class="container">
     <nav>
-      <div class="logo">AVEDANSKE<span>.svc</span></div>
+      <a href="#" class="logo" aria-label="Avedanske home">
+        <svg viewBox="0 0 120 120" fill="none" aria-hidden="true">
+          <path d="M22 98 L60 22 L98 98" stroke="#22d3ee" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle class="halo" cx="60" cy="76" r="16" fill="#34d399" opacity="0.22"/>
+          <circle cx="60" cy="76" r="8.5" fill="#34d399"/>
+        </svg>
+        avedanske
+      </a>
       <div class="nav-links">
         <a href="#services">Services</a>
         <a href="#about">About</a>
@@ -366,7 +381,14 @@
 
 <footer>
   <div class="container">
-    <div class="logo">AVEDANSKE<span>.svc</span></div>
+    <div class="logo">
+      <svg viewBox="0 0 120 120" fill="none" aria-hidden="true">
+        <path d="M22 98 L60 22 L98 98" stroke="#22d3ee" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="60" cy="76" r="16" fill="#34d399" opacity="0.22"/>
+        <circle cx="60" cy="76" r="8.5" fill="#34d399"/>
+      </svg>
+      avedanske
+    </div>
     <p>&copy; 2026 Avedanske Services Pvt Ltd. All rights reserved.</p>
   </div>
 </footer>
