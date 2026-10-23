@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bhavesh Panchal | Cloud & DevOps Lead | Avedanske Services</title>
+<meta name="description" content="Bhavesh Panchal — DevOps engineer and cloud specialist with experience in Azure, AWS, Alibaba Cloud and Kubernetes.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0e14;
+    --bg-alt:#0f1420;
+    --card:#111827;
+    --border:#1f2937;
+    --text:#e5e7eb;
+    --muted:#9ca3af;
+    --accent:#22d3ee;
+    --accent2:#34d399;
+    --mono:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg);color:var(--text);line-height:1.6;
+  }
+  a{color:var(--accent);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  .container{max-width:1120px;margin:0 auto;padding:0 24px;}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(10,14,20,0.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0;}
+  .logo{display:flex;align-items:center;gap:10px;font-family:'Sora',sans-serif;font-weight:800;font-size:1.3rem;letter-spacing:-0.02em;color:var(--text);}
+  .logo svg{width:32px;height:32px;flex-shrink:0;}
+  .back{color:var(--muted);font-size:0.95rem;}
+  .back:hover{color:var(--text);text-decoration:none;}
+
+  .hero{padding:90px 0 70px;border-bottom:1px solid var(--border);
+    background:radial-gradient(circle at 15% 20%,rgba(34,211,238,0.08),transparent 40%),
+               radial-gradient(circle at 85% 60%,rgba(52,211,153,0.07),transparent 40%);}
+  .eyebrow{display:inline-block;font-family:var(--mono);font-size:0.8rem;color:var(--accent2);
+    background:rgba(52,211,153,0.08);border:1px solid rgba(52,211,153,0.25);padding:6px 14px;border-radius:20px;margin-bottom:22px;}
+  h1{font-family:'Sora',sans-serif;font-size:clamp(2.1rem,5vw,3.2rem);font-weight:800;line-height:1.15;margin-bottom:14px;}
+  .role{font-size:1.15rem;color:var(--accent);margin-bottom:10px;}
+  .meta{color:var(--muted);font-size:0.95rem;}
+  .meta span+span::before{content:"·";margin:0 10px;}
+  .summary{color:var(--muted);font-size:1.05rem;max-width:720px;margin-top:26px;}
+  .btn{display:inline-block;margin-top:30px;padding:12px 24px;border-radius:6px;font-weight:600;font-size:0.95rem;background:var(--accent);color:#04141a;}
+  .btn:hover{text-decoration:none;opacity:0.9;}
+  .btn-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px;}
+  .btn-row .btn{margin-top:0;}
+  .btn-secondary{background:transparent;color:var(--text);border:1px solid var(--border);}
+  .btn-secondary:hover{border-color:var(--accent);opacity:1;}
+
+  section{padding:80px 0;border-bottom:1px solid var(--border);}
+  section:last-of-type{border-bottom:none;}
+  .section-tag{font-family:var(--mono);font-size:0.8rem;color:var(--accent);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;display:block;}
+  h2{font-family:'Sora',sans-serif;font-size:clamp(1.6rem,3.2vw,2.1rem);font-weight:800;margin-bottom:30px;}
+
+  .tags{display:flex;flex-wrap:wrap;gap:10px;}
+  .tag{font-family:var(--mono);font-size:0.85rem;color:var(--accent2);background:rgba(52,211,153,0.08);
+    border:1px solid rgba(52,211,153,0.25);padding:6px 14px;border-radius:20px;}
+
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px;}
+  .card h3{font-size:1.02rem;margin-bottom:6px;}
+  .card p{color:var(--muted);font-size:0.92rem;}
+  .card .issuer{font-family:var(--mono);font-size:0.8rem;color:var(--accent);margin-top:10px;display:block;}
+
+  .timeline{position:relative;padding-left:28px;border-left:1px solid var(--border);}
+  .job{position:relative;padding-bottom:36px;}
+  .job:last-child{padding-bottom:0;}
+  .job::before{content:"";position:absolute;left:-34px;top:6px;width:11px;height:11px;border-radius:50%;background:var(--accent2);box-shadow:0 0 0 4px rgba(52,211,153,0.15);}
+  .job .when{font-family:var(--mono);font-size:0.82rem;color:var(--accent);}
+  .job h3{font-size:1.1rem;margin:6px 0 2px;}
+  .job .org{color:var(--muted);font-size:0.95rem;}
+  .job ul{list-style:none;margin-top:12px;}
+  .job li{color:var(--muted);font-size:0.93rem;padding:4px 0 4px 18px;position:relative;}
+  .job li::before{content:"→";position:absolute;left:0;color:var(--accent);font-family:var(--mono);}
+
+  footer{padding:36px 0;text-align:center;color:var(--muted);font-size:0.85rem;}
+
+  @media (max-width:700px){
+    .grid{grid-template-columns:1fr;}
+    .hero{padding:60px 0 50px;}
+    section{padding:60px 0;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <a href="/" class="logo" aria-label="Avedanske home">
+        <svg viewBox="0 0 120 120" fill="none" aria-hidden="true">
+          <path d="M22 98 L60 22 L98 98" stroke="#22d3ee" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="60" cy="76" r="16" fill="#34d399" opacity="0.22"/>
+          <circle cx="60" cy="76" r="8.5" fill="#34d399"/>
+        </svg>
+        avedanske
+      </a>
+      <a href="/" class="back">← Back to home</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <span class="eyebrow">● Team</span>
+    <h1>Bhavesh Panchal</h1>
+    <p class="role">Cloud &amp; DevOps Transformation Lead</p>
+    <p class="meta"><span>AWS · Azure · Alibaba Cloud</span><span>Kubernetes</span><span>Ahmedabad, India</span></p>
+    <p class="summary">Cloud and DevOps engineer with over 15 years of experience, from Linux and Windows system administration to CI/CD automation and Kubernetes. Azure DevOps expert, Alibaba Cloud MVP and Azure Administrator. Focused on automating deployments, running reliable infrastructure and bringing teams through cloud transformation.</p>
+    <div class="btn-row">
+      <a class="btn" href="mailto:bhavesh.p@avedanske.in?subject=Request%20for%20IT%2FDevOps%20Services">Work with Bhavesh</a>
+      <a class="btn btn-secondary" href="https://www.linkedin.com/in/bhaveshhpanchal/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn-secondary" href="https://www.credly.com/users/bhavesh-panchal.09ef5bb4" target="_blank" rel="noopener">Credly badges</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="section-tag">Capabilities</span>
+    <h2>How I can help</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>CI/CD Pipelines</h3>
+        <p>Setting up continuous integration and delivery with Jenkins, Git and Azure Pipelines so releases ship faster and more consistently.</p>
+      </div>
+      <div class="card">
+        <h3>Kubernetes &amp; Containers</h3>
+        <p>Container orchestration, managed deployments, scaling, and keeping applications available and resilient.</p>
+      </div>
+      <div class="card">
+        <h3>Multi-Cloud Infrastructure</h3>
+        <p>Designing, deploying and managing cloud solutions on Azure, AWS and Alibaba Cloud, including resource management.</p>
+      </div>
+      <div class="card">
+        <h3>Infrastructure as Code</h3>
+        <p>Repeatable infrastructure with Terraform and Ansible, rather than manual setup.</p>
+      </div>
+      <div class="card">
+        <h3>Cloud &amp; DevOps Transformation</h3>
+        <p>Guiding teams from manual operations to automated, cloud-based delivery, and streamlining processes across platforms.</p>
+      </div>
+      <div class="card">
+        <h3>Windows &amp; Enterprise Infrastructure</h3>
+        <p>Active Directory, Group Policy, DNS, DHCP, WSUS, and OS deployment with WDS and MDT, plus VMware ESXi management.</p>
+      </div>
+      <div class="card">
+        <h3>Service Levels &amp; Documentation</h3>
+        <p>Monitoring performance against SLAs, and writing clear environment documentation, procedures and best practices.</p>
+      </div>
+      <div class="card">
+        <h3>Languages</h3>
+        <p>English, Hindi and Gujarati.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="section-tag">Core Skills</span>
+    <h2>What I work with</h2>
+    <div class="tags">
+      <span class="tag">Kubernetes</span>
+      <span class="tag">Microsoft Azure</span>
+      <span class="tag">Azure DevOps</span>
+      <span class="tag">AWS</span>
+      <span class="tag">Alibaba Cloud</span>
+      <span class="tag">Terraform</span>
+      <span class="tag">Ansible</span>
+      <span class="tag">Jenkins</span>
+      <span class="tag">Git</span>
+      <span class="tag">CI/CD</span>
+      <span class="tag">Containers</span>
+      <span class="tag">Linux</span>
+      <span class="tag">Active Directory</span>
+      <span class="tag">VMware ESXi</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="section-tag">Certifications</span>
+    <h2>Credentials</h2>
+    <p style="color:var(--muted);margin:-14px 0 24px;">Verified badges are on <a href="https://www.credly.com/users/bhavesh-panchal.09ef5bb4" target="_blank" rel="noopener">Credly</a>.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>Microsoft Certified: DevOps Engineer Expert</h3>
+        <span class="issuer">Microsoft</span>
+      </div>
+      <div class="card">
+        <h3>Microsoft Certified: Azure Administrator Associate</h3>
+        <span class="issuer">Microsoft</span>
+      </div>
+      <div class="card">
+        <h3>KCNA: Kubernetes and Cloud Native Associate</h3>
+        <span class="issuer">Cloud Native Computing Foundation</span>
+      </div>
+      <div class="card">
+        <h3>LFS250: Kubernetes and Cloud Native Essentials</h3>
+        <span class="issuer">Linux Foundation</span>
+      </div>
+      <div class="card">
+        <h3>Alibaba Cloud Associate: Cloud Computing</h3>
+        <span class="issuer">Alibaba Cloud</span>
+      </div>
+      <div class="card">
+        <h3>Alibaba Cloud MVP (3x)</h3>
+        <span class="issuer">Alibaba Cloud</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="section-tag">Experience</span>
+    <h2>Career timeline</h2>
+    <div class="timeline">
+
+      <div class="job">
+        <span class="when">Dec 2025 – Present</span>
+        <h3>Senior Consultant, DevOps</h3>
+        <div class="org">CodeWave Technologies Sdn. Bhd.</div>
+      </div>
+
+      <div class="job">
+        <span class="when">Jan 2023 – Jun 2025</span>
+        <h3>Consultant, DevOps Lead</h3>
+        <div class="org">Hexagon technology Sdn Bhd</div>
+      </div>
+
+      <div class="job">
+        <span class="when">Dec 2019 – Jan 2023</span>
+        <h3>DevOps Engineer</h3>
+        <div class="org">Cygnet.One</div>
+        <ul>
+          <li>Azure and AWS cloud platforms</li>
+          <li>Kubernetes and containerised workloads</li>
+          <li>Infrastructure as code with Terraform and Ansible</li>
+          <li>CI/CD pipelines with Jenkins and Azure DevOps</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <span class="when">Jul 2018 – Dec 2019</span>
+        <h3>DevOps &amp; IT Engineer</h3>
+        <div class="org">GANTNER India (formerly Syx Automations India)</div>
+      </div>
+
+      <div class="job">
+        <span class="when">Dec 2009 – Jun 2018</span>
+        <h3>System Administrator</h3>
+        <div class="org">Infostretch</div>
+        <ul>
+          <li>Managed Amazon EC2, load balancers, RDS, VPC, S3 and Elastic IPs</li>
+          <li>Installed, configured and troubleshot Linux servers</li>
+          <li>Windows infrastructure: Active Directory, Group Policy, DNS, DHCP, WSUS, WDS with MDT</li>
+          <li>VMware ESXi host and VM resource management</li>
+          <li>Service-level monitoring against client SLAs</li>
+          <li>Enterprise security: malware, ransomware and vulnerability patching</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2026 Avedanske Services Pvt Ltd. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
